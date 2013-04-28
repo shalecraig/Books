@@ -66,14 +66,14 @@ clean:
 # directory as a notes.tex
 .SECONDEXPANSION:
 %.pdf: %.tex $$(dir $$<)notes.tex Makefile
-	# TODO: make this just need to call pdflatex. There's a flag for this directory stuff.
+	@echo "Making $<"
+	@# TODO: make this just need to call pdflatex. There's a flag for this directory stuff.
 	@if [ "$(*F)" == "typeset_full" ]; then \
-		( pushd `dirname $<` && pdflatex -jobname $(*F) notes.tex && pdflatex -jobname $(*F) notes.tex && pdflatex -jobname $(*F) notes.tex && popd ); \
+		( pushd `dirname $<` && pdflatex -interaction=batchmode -jobname $(*F) notes.tex > /dev/null && pdflatex -interaction=batchmode -jobname $(*F) notes.tex > /dev/null && pdflatex -interaction=batchmode -jobname $(*F) notes.tex > /dev/null && popd ); \
 	else \
-		echo $(*F); \
-		( pushd `dirname $<` && pdflatex -jobname $(*F) "\def\isphone{1} \input{notes.tex}" && pdflatex -jobname $(*F) "\def\isphone{1} \input{notes.tex}" && pdflatex -jobname $(*F) "\def\isphone{1} \input{notes.tex}" && popd ); \
+		( pushd `dirname $<` && pdflatex -interaction=batchmode -jobname $(*F) "\def\isphone{1} \input{notes.tex}" > /dev/null && pdflatex -interaction=batchmode -jobname $(*F) "\def\isphone{1} \input{notes.tex}" > /dev/null && pdflatex -interaction=batchmode -jobname $(*F) "\def\isphone{1} \input{notes.tex}" > /dev/null && popd ); \
 	fi
-	rm -f $*.{aux,log,out}
+	@rm -f $*.{aux,log,out}
 
 %.pdf: %.tex
 	( cd `dirname $<` && pdflatex `basename $<` && pdflatex `basename $<` && pdflatex `basename $<`);

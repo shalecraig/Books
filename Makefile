@@ -65,7 +65,7 @@ clean:
 # Will run pdflatex on all tex files that match a pdf target and are in the same
 # directory as a notes.tex
 .SECONDEXPANSION:
-%.pdf: %.tex $$(dir $$<)notes.tex Makefile
+%.pdf: %.tex $$(dir $$<)notes.tex $$(dir $$<)/**/*.tex Makefile
 	@echo "Making $<"
 	@# TODO: make this just need to call pdflatex. There's a flag for this directory stuff.
 	@if [ "$(*F)" == "typeset_full" ]; then \

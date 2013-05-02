@@ -9,14 +9,18 @@ manipulate). AI goes further and also tries to build these intelligent entities.
 \label{sec:what_is_ai_}
 AI can be split into four sought after qualities in computers:
 \begin{itemize}
-    \item Thinking Humanly [Subsection~\ref{subsec:thinking_humanly}]
-    \item Thinking Rationally [Subsection~\ref{subsec:thinking_rationally}]
-    \item Acting Humanly [Subsection~\ref{subsec:acting_humanly}]
-    \item Acting Rationally [Subsection~\ref{subsec:acting_rationally}]
+    \item Thinking Humanly [Subsection~\ref{sub
+:thinking_humanly}]
+    \item Thinking Rationally [Subsection~\ref{sub
+:thinking_rationally}]
+    \item Acting Humanly [Subsection~\ref{sub
+:acting_humanly}]
+    \item Acting Rationally [Subsection~\ref{sub
+:acting_rationally}]
 \end{itemize}
 
 \subsection{Acting Humanly (The Turing Test Approach)} % (fold)
-\label{subsec:acting_humanly}
+\label{sub:acting_humanly}
 The \uline{Turing Test} provides an operational definition of intelligence.
 If a human interrogator cannot tell if the responses are from human or computer.
 For now, a computer that passes needs the following capabilities:
@@ -39,7 +43,7 @@ These six disciplines compose most of AI.
 % subsection acting_humanly (end)
 
 \subsection{Thinking Humanly (The Cognitive Modeling Approach)} % (fold)
-\label{subsec:thinking_humanly}
+\label{sub:thinking_humanly}
 
 To write a program that thinks like a human, we need to understand human minds.
 We can understand through introspection, psychological experiments, and brain
@@ -53,7 +57,7 @@ uses a good model.
 % subsection thinking_humanly (end)
 
 \subsection{Thinking Rationally (The ``Laws of Thought'' Approach)} % (fold)
-\label{subsec:thinking_rationally}
+\label{sub:thinking_rationally}
 
 Generally, rational thought is synonymous with logical thought.
 We can create programs to compute logical correctness, but these programs have
@@ -64,7 +68,7 @@ There is a difference between solving problems ``in principle'' and in practice.
 % subsection thinking_rationally (end)
 
 \subsection{Acting Rationally (The Rational Agent Approach)} % (fold)
-\label{subsec:acting_rationally}
+\label{sub:acting_rationally}
 
 \uline{Computer agents} are expected to autonomously perceive their environment,
 persist over time, create and set goals.
@@ -93,7 +97,7 @@ This is a brief history of ideas that contribute to AI.
 It glosses over many parts.
 
 \subsection{Philosophy} % (fold)
-\label{subsec:philosophy}
+\label{sub:philosophy}
 Reasoning is like numerical computation, we can use formal rules to form
 conclusions.
 
@@ -110,6 +114,227 @@ Aristotle defines that actions are justified by expected outcome and goals.
 He defines an iterative algorithm that builds dependencies to achieve a goal.
 % subsection philosophy (end)
 
+\subsection{Mathematics} % (fold)
+\label{sub:mathematics}
+We need to develop logic, computation, and probability to implement philosophy.
+Boolean logic is logic on propositions.
+We can use first-order logic to include objects and relations.
+These give us the formal rules to draw conclusions.
+
+We have algorithms to prove statements.
+There are true but undecidable statements.
+Church-Turing thesis is Turing machines can compute all computable functions.
+Intractable problems are ones in \mbox{EXPTIME}.
+(Solvable only in exponential time with respect to input).
+
+Probability allows us to reason with uncertain information.
+Bayes rule underlies most modern approaches to reasoning in AI systems.
+% subsection mathematics (end)
+
+\subsection{Economics} % (fold)
+\label{sub:economics}
+
+Economies can be thought of as a individual agents maximizing their success.
+People make choices that lead to preferred outcomes, or ``utility''.
+Decision theory provides a framework for decisions made under uncertainty.
+Some decisions have order associated with them - uses Marko Decision Processes.
+
+% subsection economics (end)
+
+\subsection{Neuroscience} % (fold)
+\label{sub:neuroscience}
+Neuroscience is the study of brains.
+Localized areas of the brain are responsible for specific cognitive functions.
+A collection of simple cells can lead to thought, action, and consciousness.
+With computers of unlimited capacity, we still don't know how to make a brain.
+% subsection neuroscience (end)
+
+\subsection{Psychology} % (fold)
+\label{sub:psychology}
+Cognitive psychology views the brain as an information processing device.
+Stimulus is translated into an internal model.
+Internal models are manipulated by cognitive processes to form new models.
+New models are translated into action.
+% subsection psychology (end)
+
+\subsection{Computer Engineering} % (fold)
+\label{sub:computer_engineering}
+
+Computer performance doubled every 18 months until 2005.
+Power dissipation problems mean an increase cores instead of clock speed.
+Work in AI owes much to CS and the converse is also true.
+% subsection computer_engineering (end)
+
+\subsection{Control Theory and Cybernetics} % (fold)
+\label{sub:control_theory_and_cybernetics}
+
+Controlling something is acting to minimize ``error'' (state vs goal).
+Modern control theory designs systems to maximize a function over time.
+Control theory is similar to AI because AI tries to maximize a function.
+The two are different because controls are continuous, AI is otherwise.
+
+% subsection control_theory_and_cybernetics (end)
+
+\subsection{Linguistics} % (fold)
+\label{sub:linguistics}
+
+Understanding language requires an understanding of subject and context, not just sentence structure.
+It's hard.
+
+% subsection linguistics (end)
+
 % section foundations_of_artificial_intelligence (end)
+
+\section{The History of Artificial Intelligence} % (fold)
+\label{sec:the_history_of_artificial_intelligence}
+
+\subsection{The Gestation of Artificial Intelligence (1943-1955)} % (fold)
+\label{sub:the_gestation_of_artificial_intelligence_}
+
+Initially knowledge of physiology and propositional logic formed a basis for AI.
+Artificial neurons were supposed to be ``on'' or ``off''.
+Systems of neurons are Turing Complete [exciting!].
+The \uline{Hebbian Rule} dictates connection strengths between neurons.
+Alan Turing introduced the Turing Test.
+
+% subsection the_gestation_of_artificial_intelligence_ (end)
+
+\subsection{The Birth of Artificial Intelligence (1956)} % (fold)
+\label{sub:the_birth_of_artificial_intelligence_}
+
+Logic Theorist (program) was written to think non-numerically.
+AI embraces creativity, self improvement, and language, it formed its own field
+in cs.
+
+% subsection the_birth_of_artificial_intelligence_ (end)
+
+\subsection{Early Enthusiasm, Great expectations (1952 - 1969)} % (fold)
+\label{sub:early_enthusiasm_great_expectations_}
+
+Early AI research was successful because challenges were ``AI can't do X''.
+GPS was written to be the first program to establish sub-goals - it
+``thinks humanly''.
+Using physical symbols as objects is necessary and sufficient for general AI.
+Geometry Theorem Provider is made to prove tricky geometry problems.
+A checkers agent was better than it's creator, disproving a theory.
+Perceptron convergence theorem says that learning algorithms can learn for a
+given input.
+
+% subsection early_enthusiasm_great_expectations_ (end)
+
+\subsection{A Dose of Reality (1966-1973)} % (fold)
+\label{sub:a_dose_of_reality_}
+
+Initially, AI researchers weren't shy about being optimistic.
+Later on, they found they were running into three main problems:
+First, the programs had no contextual basis for making decisions.
+Second, AI solved by brute-forcing ``microworlds'', which is bad at scaling.
+Genetic Algorithms were built because they seemed more minor, but they didn't
+build good programs.
+Third, the basic structures imposed limitations; simple perceptrons are limited.
+
+% subsection a_dose_of_reality_ (end)
+
+\subsection{Knowledge Based Systems: The Key to Power? (1969 - 1979)} % (fold)
+\label{sub:knowledge_based_systems_the_key_to_power_}
+
+Weak methods try to solve general problems by stringing together elementary
+reasoning.
+They fail for large problem spaces.
+A better approach is to use domain-specific knowledge to help solve a problem.
+Cook-book recipes helped solve hard problems from the basis of easy problems.
+Heuristic programming was for investigating the capabilities of expert systems.
+Expert systems are expensive, as they require a ton of information gathering.
+
+% subsection knowledge_based_systems_the_key_to_power_ (end)
+
+\subsection{AI Becomes an Industry (1980-Present)} % (fold)
+\label{sub:ai_becomes_an_industry_}
+
+In ~1989 nearly every US corp had an AI group and was using expert systems.
+Later on, many companies failed on their promises.
+
+% subsection ai_becomes_an_industry_ (end)
+
+\subsection{The Return of Neural Networks (1986-Present)} % (fold)
+\label{sub:the_return_of_neural_networks_}
+
+Back propagation for neural nets was invented by at least four different groups.
+Some think that humans manipulate symbols, others don't think connections, not
+symbols are involved.
+Current view is that they are complementary, but this question remains open.
+Modern Neural Network is two fields:
+One is for effective network architectures.
+The other is concerned about empirical properties of actual neurons.
+
+% subsection the_return_of_neural_networks_ (end)
+
+\subsection{AI Adopts the Scientific Method (1987-Present)} % (fold)
+\label{sub:ai_adopts_the_scientific_method_}
+
+AI initially rebelled against Control Theory and Statistics, but is returning to
+scientific rigor.
+Speech recognition was tried with limited success in the past.
+Hidden Markov Models now dominate speech recognition.
+Hidden Markov Models are based on rigorous mathematical theory, and they can use
+real-world data.
+Bayesian networks allow fast representation of uncertain knowledge.
+
+% subsection ai_adopts_the_scientific_method_ (end)
+
+\subsection{The Emergence of Intelligent Agents (1995-present)} % (fold)
+\label{sub:the_emergence_of_intelligent_agents}
+
+Intelligent agents have been developed more recently to solve specific issues.
+Some AI Giants (McCarthy, ++) believe that AI should go back to making
+``machines that think''.
+General Intelligence AI is ruled by a universal algorithm for learning and
+acting.
+General Intelligence AI is the golden goal.
+
+% subsection the_emergence_of_intelligent_agents (end)
+
+\subsection{The Availability Of Very Large Data Sets (2001-Present)} % (fold)
+\label{sub:the_availability_of_very_large_data_sets_}
+
+Some recent work says if we analyze more data, we don't need to focus on the
+algorithm as much.
+The idea is that you can learn context from large enough corpuses.
+Small corpuses are pretty much expert systems.
+Once AI passes the ``data bottleneck'', then it becomes scarily accurate.
+
+% subsection the_availability_of_very_large_data_sets_ (end)
+
+% section the_history_of_artificial_intelligence (end)
+
+\section{The State of the Art} % (fold)
+\label{sec:the_state_of_the_art}
+
+AI can do tons today.
+It can do driving, speech recognition, autonomous planning/scheduling, game
+playing, spam fighting, logistics planning, robotics, machine translation, and
+much more.
+We will go into these in a much higher level of detail in future chapters.
+
+% section the_state_of_the_art (end)
+
+\section{Summary} % (fold)
+\label{sec:summary}
+Important points:
+\begin{itemize}
+    \item Intelligence is concerned with rational action.
+    Agents try to make good choices.
+    \item Economists formalized decision making.
+    \item Neuroscientists discovered how the way brain works in contrast to
+    computers.
+    \item Computer Engineers provide powerful machines for AI.
+    \item Control theory was the initial basis for AI.
+    Initially, the two were very different, but they grow more similar.
+    \item Recent progress on understanding intelligence has grown at pace with
+    computer capabilities.
+    \item The field of AI has grown substantially;
+    sub-fields of AI are integral to other fields.
+\end{itemize}
+% section summary (end)
 
 % chapter introduction (end)

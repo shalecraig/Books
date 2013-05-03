@@ -1,0 +1,123 @@
+% !TEX root = ../
+\chapter{Intelligent Agents} % (fold)
+\label{cha:intelligent_agents}
+
+Chapter \ref{cha:introduction} referred to rational agents, here we define them.
+
+\section{Agents and Environments} % (fold)
+\label{sec:agents_and_environments}
+
+Agents perceive their environment through sensors and act on it with actuators.
+A ``percept'' is the agent's perceptual inputs at any given instant.
+``Percept sequences'' are time-series of percept states.
+``Agent functions'' describe the percept sequence to action mapping of an agent.
+Agent functions are implemented as programs.
+Agents are meant to be a tool for analyzing systems.
+
+% section agents_and_environments (end)
+
+\section{Good Behaviour - The Concept of Rationality} % (fold)
+\label{sec:good_behaviour_the_concept_of_rationality}
+
+Rational agents do the right thing, but what is the right thing?
+Consequences of behaviour is a big measure.
+Sometimes there is a performance measure to evaluate the environment state.
+Some measures can be implemented dumbly, they need to be carefully designed.
+
+\subsection{Rationality} % (fold)
+\label{sub:rationality}
+Rationality depends on four tenets:
+\begin{enumerate}
+    \item The performance that defines the criterion of success.
+    \item The agent's prior knowledge of environment.
+    \item The actions performable by the agent.
+    \item The agent's percept sequence to date.
+\end{enumerate}
+
+Rational agents can be defined as follows:
+
+\begin{em}
+    For each possible percept sequence, a rational agent should select an action
+    that is expected to maximize its performance measure, given the evidence
+    provided by the percept sequence and whatever built-in knowledge the agent
+    has.
+\end{em}
+
+It is necessary and sufficient that agents that fulfill all four tenets to be
+rational.
+
+% subsection rationality (end)
+
+\subsection{Omniscience, Learning, and Autonomy} % (fold)
+\label{sub:omniscience_learning_and_autonomy}
+
+Omniscient agents are not possible within reality, because they \uline{know} the
+outcome of their actions.
+Rational agents draw conclusions about everything they \uline{can} know, not
+everything knowable.
+Rational agents then do information gathering to be better at predicting
+consequences.
+Rational agents should learn what they should expect to have to compensate for.
+Applying learned knowledge is a prerequisite to success in many environments.
+
+% subsection omniscience_learning_and_autonomy (end)
+
+% section good_behaviour_the_concept_of_rationality (end)
+
+\section{The Nature of Environments} % (fold)
+\label{sec:the_nature_of_environments}
+
+We know about rationality, let's talk about environment.
+
+\subsection{Specifying the Task Environment} % (fold)
+\label{sub:specifying_the_task_environment}
+
+Task Environments are tuples of performance, environment, actuators, and
+sensors. (PEAS)
+Some task environments like the Roomba are very simple to define while others
+like taxicab drivers are very hard.
+
+% subsection specifying_the_task_environment (end)
+
+\subsection{Properties of Task Environments} % (fold)
+\label{sub:properties_of_task_environments}
+
+We can categorize task environments into a few broad categories:
+\begin{itemize}
+    \item \uline{Fully v.s. Partially observable} environments - if the sensors
+    can see everything, then the task is fully observable.
+    \item \uline{Single Agent v.s. Multiagent} - if the agent is alone, or if
+    there are multiple agents playing against it.
+    \item \uline{Deterministic v.s. Stochaistic} - if the next step is
+    completely determined by the current state and action, or if there is some
+    sort of randomness involved.
+    \item \uline{Episodic v.s. Sequential} -
+    Episodic task environments are one-off episodes with consequences of actions.
+    Sequential task environments are where short-term actions have consequences.
+    \item \uline{Static v.s. Dynamic} -
+    Static environments do not change while computation occurs.
+    Dynamic environments  are where waiting for computation is choosing to
+    ``do nothing''.
+    \item \uline{Discrete v.s. Continuous} -
+    State, time, and percepts can either be continuously occurring, or
+    distinctly different states, times, and percepts.
+    \item \uline{Known v.s. Unknown} -
+    In known environments, outcomes are known.
+    In unknown environments, agents will need to understand how it works to make
+    good decisions.
+\end{itemize}
+
+Expectedly, the hardest environment is Partially Observable, Multiagent,
+Stochaistic, Sequential, Dynamic, Continuous and Unknown.
+Just like driving a car in an unfamiliar country, with unknown driving laws.
+
+% subsection properties_of_task_environments (end)
+
+% section the_nature_of_environments (end)
+
+\section{The Structure of Agents} % (fold)
+\label{sec:the_structure_of_agents}
+
+% section the_structure_of_agents (end)
+
+% chapter intelligent_agents (end)

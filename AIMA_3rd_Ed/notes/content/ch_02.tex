@@ -118,6 +118,123 @@ Just like driving a car in an unfamiliar country, with unknown driving laws.
 \section{The Structure of Agents} % (fold)
 \label{sec:the_structure_of_agents}
 
+The job of AI is to design agent programs to map precepts to actions.
+Agents are compromised of a physical sensor/actuator architecture and a program.
+
+\subsection{Agent Programs} % (fold)
+\label{sub:agent_programs}
+
+All agents in this book take current precept as input and control actuators.
+Agents use current percept as input, agent functions use the entire history.
+Table-Driven agents implement the desired agent function, but are impossibly
+hard to populate tables for.
+Tables of sqrts have been replaced by a five-line newtonian regression method on
+electronic calculators.
+The question is: can AI do for general intelligent behavior what Newton did for
+square roots? We think yes.
+
+% subsection agent_programs (end)
+
+\subsection{Simple Reflex Agents} % (fold)
+\label{sub:simple_reflex_agents}
+
+Simple reflex agents select actions on the basis of current precept only.
+These are always very simple (e.g. if car-ahead-is-braking then start-braking).
+They are simple, but they have very limited intelligence; partial observability
+kills these agents.
+
+% subsection simple_reflex_agents (end)
+
+\subsection{Model-Based Reflex Agents} % (fold)
+\label{sub:model_based_reflex_agents}
+
+The most effective way to handle partial observability is to keep an internal
+model of what the agent can't see.
+These agents need to understand the wold evolving around them, and how their
+actions affect the world.
+
+% subsection model_based_reflex_agents (end)
+
+\subsection{Goal-Based Agents} % (fold)
+\label{sub:goal_based_agents}
+
+Agents need a goal to base decisions towards.
+They need to understand some situations as desirable, and others as less.
+Goal-based action is sometimes straightforward, but is often not.
+This involves decision about the future (e.g. What will make me happy?).
+Goal-based agents appear less efficient, but knowledge makes them more flexible.
+
+% subsection goal_based_agents (end)
+
+\subsection{Utility-Based Agents} % (fold)
+\label{sub:utility_based_agents}
+
+Goals are not enough to generate high-quality behavior, as they are only binary.
+Utility is a measure of ``how good'' a state is, computed by a utility function.
+This is not the only way to be rational, but it is much more flexible.
+\begin{em}
+    Rational utility-based agents choose the action that maximize the expected
+    utility the agent expects to derive, on average, given the probabilities and
+    utilities of each outcome.
+\end{em}
+Utility functions allow tradeoffs between different (possibly uncertain) goals.
+
+% subsection utility_based_agents (end)
+
+\subsection{Learning Agents} % (fold)
+\label{sub:learning_agents}
+
+Turing proposes that we can build learning machines by building then teaching.
+\uline{Learning elements} are responsible for making improvements;
+\uline{Performance elements} are responsible for selecting external actions.
+A \uline{Critic} compares of the learning element to an external standard.
+\uline{Problem Generator}s disrupt the monotony of learned things with actions
+that lead to informative, new experiences.
+
+% subsection learning_agents (end)
+
+\subsection{How the Components of Agent Programs Work} % (fold)
+\label{sub:how_the_components_of_agent_programs_work}
+
+There are a few ways to represent the states of agent programs:
+\begin{itemize}
+    \item Atomic Representation - each state has no internal structure.
+    \item Factored Representation - splits up states into a set of attributes.
+    \item Structured Representation - world is things that are related, not just
+    variables with value.
+\end{itemize}
+The more expressive a representation, the more complex learning and reasoning
+become.
+
+% subsection how_the_components_of_agent_programs_work (end)
+
+\subsection{Summary} % (fold)
+\label{sub:summary}
+
+This chapter tours AI really quickly, but here are some key points:
+\begin{itemize}
+    \item Agents perceive and act in an environment.
+    \item An agent function for an agent specifies the action taken in response
+    to any percept sequence.
+    \item The performance measure evaluates behaviour of the agent.
+    \item A rational agent acts to maximize the expected value of an action
+    given the precept sequence so far.
+    \item Task environments include the performance measure, external
+    environment, the actuators, and the sensors.
+    \item To design agents, we should specify task environments first.
+    \item Task environments vary along dimensions. (agents, determinsitic, etc.)
+    \item The agent program implements the agent function.
+    \item There are a bunch of basic agent-program designs reflecting info used
+    in the decision process.
+    \item Simple reflex agents respond to percepts, model-based reflex agents
+    maintain a model.
+    Goal-based agents act to achieve goals, utility-based
+    agents act to maximize utility (``happiness''.)
+    \item All agents can improve through learning.
+\end{itemize}
+
+% subsection summary (end)
+
 % section the_structure_of_agents (end)
 
 % chapter intelligent_agents (end)

@@ -1,0 +1,63 @@
+% !TEX root = ../
+\chapter{Solving Problems by Searching} % (fold)
+\label{cha:solving_problems_by_searching}
+
+{
+\rmk At this point I only started writing summaries, instead of breaking down
+notes at every section.
+}
+\section{Summary} % (fold)
+\label{sec:summary}
+
+We can use graph (or tree) searches to make decisions to achieve goals.
+These work well in environments that are deterministic, observable, static, and
+completely known.
+
+\begin{itemize}
+    \item Goals need to be identified before searching.
+    \item Problems are 5-tuples:
+        \begin{itemize}
+            \item Initial state
+            \item A set of actions
+            \item A transition model (state x action $\rightarrow$ state)
+            \item A goal test function
+            \item A path cost function
+        \end{itemize}
+    \item Search algorithms treat states and actions as atomic.
+    \item Tree-searches consider all possible paths to find a solution,
+    graph-searches avoid redundant paths.
+    \item Search algorithms are judged on the basis of completeless, optimality,
+    time complexity, and space complexity.
+    \item Uninformed search methods only access the problem definition. They
+    include:
+        \begin{itemize}
+            \item BFS/DFS
+            \item Uniform-cost search expands the node with the lowest path
+            cost.
+            \item Iterative deepening DFS iteratively increases the depth limit
+            of DFS until a goal is found. It boasts $O(n)$ space, it is optimal
+            for unit step cost and has time complexity comparable to BFS.
+            \item Bidirectional search techniques are possible sometimes, and
+            greatly reduce time complexity.
+        \end{itemize}
+    \item Informed search methods may use heuristic functions $h(n)$ to estimate
+    the cost of a solution from $n$.
+    \begin{itemize}
+        \item Best-first search solution is like BFS, and uses $h(n)$ to pick
+        the node.
+        \item Greedy best-first solutions expands nodes with minimal $h(n)$. It
+        is not optimal, but is fast.
+        \item A$^*$ expands nodes with minimal $f(n) = g(n) + h(n)$ ($g(n)$ is
+        the cost so far). We say $h(n)$ is admissible when it never
+        over-estimates the cost to $n$. The best heuristic is the closest to the
+        actual cost, so multiple heuristics can be combined by
+        $\max(h_1(x), h_2(x),\ldots)$.
+        \item RBFS (Recursive best-first search) and SMA* (simplified memory
+        bounded A$^*$) are robust and optimal, and only use limited memory.
+    \end{itemize}
+    \item Heuristic search performance depends on the accuracy of $h(n)$.
+\end{itemize}
+
+% section summary (end)
+
+% chapter solving_problems_by_searching (end)

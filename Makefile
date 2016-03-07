@@ -29,14 +29,10 @@
 # Find the notes/assignment/lab files:
 _typeset_note_tex = $(wildcard ./**/notes/typeset*.tex)
 _typeset_note_pdfs = $(_typeset_note_tex:%.tex=%.pdf)
-_assignment_tex = $(wildcard ./**/assignments/a*/a*.tex)
-_assignment_pdfs = $(_assignment_tex:%.tex=%.pdf)
-_lab_tex = $(wildcard ./**/labs/l*/*.tex)
-_lab_pdfs = $(_lab_tex:%.tex=%.pdf)
-_all_generated = $(_typeset_note_pdfs) $(_assignment_pdfs) $(_lab_pdfs)
+_all_generated = $(_typeset_note_pdfs)
 
 # Targets.
-PHONY = list clean default all notes assignments labs
+PHONY = list clean default all notes labs list_notes preflight preflight_pdflatex
 
 default:
 	@make all
@@ -45,12 +41,6 @@ list_notes:
 	@echo $(_typeset_note_pdfs)
 
 notes: $(_typeset_note_pdfs)
-	@echo $^
-
-labs: $(_lab_pdfs)
-	@echo $^
-
-assignments: $(_assignment_pdfs)
 	@echo $^
 
 list:
@@ -62,10 +52,17 @@ all: $(_all_generated)
 clean:
 	@rm -rf $(_all_generated)
 
+preflight: preflight_pdflatex
+	@echo "All dependencies satisfied"
+
+preflight_pdflatex:
+	@echo "Checking for pdflatex..."
+	@which pdflatex
+
 # Will run pdflatex on all tex files that match a pdf target and are in the same
 # directory as a notes.tex
 .SECONDEXPANSION:
-%.pdf: %.tex $$(dir $$<)notes.tex $$(dir $$<)/**/*.tex Makefile
+%.pdf: preflight %.tex $$(dir $$<)notes.tex $$(dir $$<)/**/*.tex Makefile
 	@echo "Making $<"
 	@# TODO: make this just need to call pdflatex. There's a flag for this directory stuff.
 	@if [ "$(*F)" == "typeset_full" ]; then \
@@ -75,6 +72,6 @@ clean:
 	fi
 	@rm -f $*.{aux,log,out}
 
-%.pdf: %.tex
+%.pdf: preflight %.tex
 	( cd `dirname $<` && pdflatex `basename $<` && pdflatex `basename $<` && pdflatex `basename $<`);
 	rm -f $*.{aux,log,out}
